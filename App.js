@@ -5,17 +5,16 @@ import { ApplicationProvider, IconRegistry, Button, Icon, Layout, Text } from '@
 import { default as theme } from './utils/theme.json'; // <-- Import app theme
 import { default as mapping } from './utils/mapping.json'; // <-- Import app mapping [assets]
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import AppNavigator from './src/navigator.component';
+import AppNavigator from './src/screens/navigator.component';
 
 
 export default () => (
   <>
-  <Text>Hello</Text>
-  {/* <IconRegistry icons={EvaIconsPack} />
+  <IconRegistry icons={EvaIconsPack} />
     <ApplicationProvider {...eva} 
         theme={{ ...eva.light, ...theme }}
         customMapping={mapping} >
       <AppNavigator />
-    </ApplicationProvider> */}
+    </ApplicationProvider>
   </>
 );

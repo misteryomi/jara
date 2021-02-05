@@ -2,5 +2,5 @@ import React from 'react';
 import { Text } from '@ui-kitten/components';
 
 export default () => {
-    return <Text>Comminities</Text>
+    return <Text>Sign up</Text>
 }
