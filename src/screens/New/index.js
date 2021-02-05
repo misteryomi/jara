@@ -3,11 +3,13 @@ import { Card, Divider, Icon, Button, Input, TopNavigation } from '@ui-kitten/co
 import { Text, StyleSheet } from 'react-native';
 import {actions, getContentCSS, RichEditor, RichToolbar} from 'react-native-pell-rich-editor';
 import { BaseLayout } from '../../components';
-
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import ImgPicker from '../../components/ImagePicker'
 
 export default () => {
     let richtext = React.createRef()  || useRef();
     // linkModal = React.createRef();
+    
 
 
     return (
@@ -28,11 +30,7 @@ export default () => {
                     actions.setItalic,
                     actions.insertBulletsList,
                     actions.insertOrderedList,
-                    // actions.insertImage,
-                    // actions.insertVideo,
-                    // 'customAction',
                 ]}                
-                // insertVideo={insertVideo}
             />            
             <RichEditor
                 ref={(r) => richtext = r}
@@ -43,14 +41,35 @@ export default () => {
                 // editorInitializedCallback={() => this.onEditorInitialized()}
             />    
 
-            {/* <Input
-                multiline={true}
-                textStyle={{ minHeight: 104 }}
-                placeholder='Add details (optional)'
-                // {...multilineInputState}
-            /> */}
             <Card>
                 <Text>Hello</Text>
+                <ImgPicker mediaFiles={(mediaFiles) => console.log({mediaFiles})} videoFiles={(files) => console.log({files})}/>
+
+                {/* <Button
+                    onPress={() =>
+                        launchImageLibrary(
+                        {
+                            mediaType: 'photo',
+                            includeBase64: false,
+                            maxHeight: 200,
+                            maxWidth: 200,
+                        },
+                        (response) => {
+                            console.log({response})
+                            // setResponse(response);
+                        },
+                        )
+                    }
+                    >Select image</Button>
+
+                    <Button
+                
+                    onPress={() =>
+                        launchImageLibrary({mediaType: 'video'}, (response) => {
+                        console.log({response});
+                        })
+                    }
+                    >Select video</Button> */}
             </Card>
             <Button  status='danger'>Publish</Button>
         </BaseLayout>

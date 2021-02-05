@@ -135,6 +135,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        missingDimensionStrategy 'react-native-camera', 'general'
         // missingDimensionStrategy 'react-native-camera', 'general' // <--- insert this line for rn-camera
 
     }
@@ -187,6 +188,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "androidx.appcompat:appcompat:1.0.0"
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
